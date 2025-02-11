@@ -1,6 +1,6 @@
 # Hikvision Utility  
 
-A Scrypted plugin for controlling Hikvision camera features such as supplemental light (floodlight), audio alarms, and strobe lights.  
+A Scrypted plugin for controlling Hikvision camera features such as supplemental light (floodlight), alarms, audio alarm, and strobe lights.  
 
 ## Installation & Configuration
 1. Install the `Hikvision Utility` plugin in Scrypted.

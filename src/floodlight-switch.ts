@@ -11,7 +11,7 @@ import sdk, {
   ScryptedDevice
 } from '@scrypted/sdk';
 import { StorageSettings } from '@scrypted/sdk/storage-settings';
-import { setSupplementalLight, getSupplementalLightState } from './floodlight-api';
+import { setSupplementalLight, getSupplementalLightState } from './hikvision-api';
 
 async function fetchCameraSetting(key: string, camId: string): Promise<string> {
   const cam = sdk.systemManager.getDeviceById<ScryptedDevice>(camId);
@@ -103,13 +103,11 @@ export class FloodlightSwitch extends ScryptedDeviceBase implements OnOff, Setti
   async turnOn(): Promise<void> {
     await this.setFloodlight(true);
     this.on = true;
-    console.log('[FloodlightSwitch] Floodlight turned ON');
   }
 
   async turnOff(): Promise<void> {
     await this.setFloodlight(false);
     this.on = false;
-    console.log('[FloodlightSwitch] Floodlight turned OFF');
   }
 
   async setFloodlight(enable: boolean): Promise<void> {
